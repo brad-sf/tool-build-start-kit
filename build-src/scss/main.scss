@@ -2,8 +2,14 @@
  * MAIN.SCSS
  * Import
  */
+ 
 
-// Vendor
+// SUSY
+$susy: (
+  columns: 12,
+  gutter-position: split,
+  global-box-sizing: border-box;
+);
 @import "vendor/susy";
 @import "vendor/normalize";
 

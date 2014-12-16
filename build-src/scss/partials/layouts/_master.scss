@@ -27,6 +27,30 @@ body {
 
 
 /**
+ * MAIN
+ */
+.main {}
+
+
+
+
+
+
+/**
+ * .CONTAINER
+ */
+.container {
+  @include container;
+  @include breakpoint(sm) {max-width: $gridSmall;}
+  @include breakpoint(md) {max-width: $gridMedium;}
+  @include breakpoint(lg) {max-width: $gridLarge;}
+  @include breakpoint(xl) {max-width: $gridExtraLarge;}
+  padding: 15px;
+}
+
+
+
+/**
  * FOOTER
  */
 .footer {}

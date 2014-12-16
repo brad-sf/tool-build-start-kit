@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     sass = require('gulp-sass'),
     autoprefix = require('gulp-autoprefixer'),
+    concat = require('gulp-concat'),
     uglify = require('gulp-uglify');
 
 // Dirs

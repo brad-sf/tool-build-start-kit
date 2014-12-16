@@ -17,7 +17,7 @@
   @else if $class == lg {
     @media (min-width: $gridLarge) { @content; }
   }
-  @else if $class == lg {
+  @else if $class == xl {
     @media (min-width: $gridExtraLarge) { @content; }
   }
   @else {
