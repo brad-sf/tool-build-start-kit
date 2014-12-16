@@ -1,0 +1,11 @@
+.DS_Store
+
+.vagrant
+.sass-cache
+.codekit-cache
+codekit-config
+config.codekit
+
+node_modules/
+
+.idea

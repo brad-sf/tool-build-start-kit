@@ -1,0 +1,25 @@
+/**
+ * FONT IMPORTS
+ */
+
+
+
+/**
+ * FONT VARIABLES
+ */
+$headingFont: sans-serif;
+$subheadingFont: sans-serif;
+$bodyFont: Helvetica, sans-serif;
+$scriptFont: sans-serif;
+
+
+
+/**
+ * FONT MIXINS
+ */
+
+// HEADING FONT
+@mixin headingFont {
+  font-family: $headingFont;
+  letter-spacing: 1px;
+}

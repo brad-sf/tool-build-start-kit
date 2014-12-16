@@ -1,0 +1,29 @@
+/**
+ * MAIN.SCSS
+ * Import
+ */
+
+// Vendor
+@import "vendor/susy";
+@import "vendor/normalize";
+
+// Global
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/general";
+
+// Layouts & Modules
+@import "partials/layouts/global";
+@import "partials/layouts/master";
+@import "partials/modules";
+
+// Global styles
+@import "partials/fonts-colors";
+
+// Templates
+@import "partials/templates/home";
+
+// Components
+@import "partials/components/sliders";
+@import "partials/helpers";
+
