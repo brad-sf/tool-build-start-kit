@@ -21,10 +21,15 @@ and concatenating commands
 
 
 ### CSS
+Style guidelines of [cssguidelin.es](http://cssguidelin.es/)
 BEM-style naming
 .block-name
 .block-name__element
 .block-name__element--modifier
+
+
+### LiveReload
+Gulp will LiveReload on compile. Install the [Chrome LiveReload extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei), run `gulp` and connect/activate the extension.
 
 
 ### Robots.txt

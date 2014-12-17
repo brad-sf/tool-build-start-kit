@@ -2,6 +2,10 @@
  * MAIN.SCSS
  * Import
  */
+/**
+ * SUSY GRID
+ * Setting defaults - http://susydocs.oddbird.net/en/latest/settings/
+ */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -331,10 +335,8 @@ td, th {
  * COLORS
  */
 /**
- * GRID BREAKPOINTS
- */
-/**
- * GRID & BREAKPOINTS
+ * NEST
+ * (like .row from TWBS)
  */
 /**
  * UNCOLUMN
@@ -342,6 +344,44 @@ td, th {
 /**
  * UNLIST
  */
+/**
+ * GRID BREAKPOINTS
+ */
+/**
+ * GRID BREAKPOINT CONTROLLER MIXIN
+ * Mobile First.
+ */
+/**
+ * MOBILE LAST DESKTOP OUT BREAKPOINTS
+ * For use in unique circumstances requiring degraded
+ * styles in a 'desktop' first style.
+ */
+/**
+ * OUTER-CONTAINER
+ * Constrains content to breakpoints.
+ */
+.outer-container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px; }
+  .outer-container:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  @media (min-width: 768px) {
+    .outer-container {
+      max-width: 768px; } }
+  @media (min-width: 992px) {
+    .outer-container {
+      max-width: 992px; } }
+  @media (min-width: 1200px) {
+    .outer-container {
+      max-width: 1200px; } }
+  @media (min-width: 1400px) {
+    .outer-container {
+      max-width: 1400px; } }
+
 /**
  * GENERAL
  */
@@ -360,12 +400,30 @@ fieldset {
 /**
  * GLOBAL ACCROSS ALL TEMPLATES
  */
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/**
+ * IMAGES
+ */
 img {
   max-width: 100%;
   height: auto; }
 
+/**
+ * HEADINGS
+ */
 h1, h2, h3, h4 {
   text-transform: uppercase; }
+
+/**
+ * LISTS ul/li
+ */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
 
 /**
  * MASTER LAYOUT
@@ -376,40 +434,55 @@ body {
 /**
  * HEADER
  */
+.header {
+  background: tomato; }
+
 /**
  * MENU NAV
  */
+.header-nav:after {
+  content: " ";
+  display: block;
+  clear: both; }
+
+.header-nav__item {
+  
+  
+  
+  width: 32.20339%;
+  float: left;
+  
+  margin-right: 1.69492%;
+  
+  
+  padding: 15px; }
+  .header-nav__item:last-child {
+    
+    
+    
+    width: 32.20339%;
+    float: right;
+    
+    margin-right: 0;
+    
+     }
+
 /**
  * MAIN
  */
 /**
- * .CONTAINER
- */
-.container {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 15px; }
-  .container:after {
-    content: " ";
-    display: block;
-    clear: both; }
-  @media (min-width: 768px) {
-    .container {
-      max-width: 768px; } }
-  @media (min-width: 992px) {
-    .container {
-      max-width: 992px; } }
-  @media (min-width: 1200px) {
-    .container {
-      max-width: 1200px; } }
-  @media (min-width: 1400px) {
-    .container {
-      max-width: 1400px; } }
-
-/**
  * FOOTER
  */
+.footer {
+  padding: 15px 0; }
+
+/**
+ * BROWSERUPGRADE
+ */
+.browserupgrade {
+  text-align: center;
+  padding: 50px; }
+
 /**
  * MODULES
  */

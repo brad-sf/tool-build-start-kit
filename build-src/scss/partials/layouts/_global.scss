@@ -2,15 +2,40 @@
  * GLOBAL ACCROSS ALL TEMPLATES
  */
 
+// Border Box :)
+* { 
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
+
+
+/**
+ * IMAGES
+ */
 img {
    max-width: 100%;
    height: auto;
 }
 
 
+
+
+
+/**
+ * HEADINGS
+ */
 h1, h2, h3, h4 {
   text-transform: uppercase;
 }
 
 
+
+
+
+/**
+ * LISTS ul/li
+ */
+ ul {
+  @include unlist();
+ }

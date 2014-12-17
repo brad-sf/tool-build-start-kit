@@ -12,7 +12,10 @@ body {
 /**
  * HEADER
  */
-.header {}
+.header {
+  background: tomato;
+}
+
 
 
 
@@ -21,7 +24,15 @@ body {
 /**
  * MENU NAV
  */
+.header-nav {
+  @include nest();
+}
 
+.header-nav__item {
+  @include span(4);
+  &:last-child{@include span(4 last);}
+  padding: 15px;
+}
 
 
 
@@ -36,21 +47,27 @@ body {
 
 
 
-/**
- * .CONTAINER
- */
-.container {
-  @include container;
-  @include breakpoint(sm) {max-width: $gridSmall;}
-  @include breakpoint(md) {max-width: $gridMedium;}
-  @include breakpoint(lg) {max-width: $gridLarge;}
-  @include breakpoint(xl) {max-width: $gridExtraLarge;}
-  padding: 15px;
-}
+
 
 
 
 /**
  * FOOTER
  */
-.footer {}
+.footer {
+  padding: 15px 0;
+}
+
+
+
+
+
+
+
+/**
+ * BROWSERUPGRADE
+ */
+.browserupgrade {
+  text-align: center;
+  padding: 50px;
+}

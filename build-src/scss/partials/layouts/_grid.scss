@@ -1,0 +1,118 @@
+/**
+ * GRID BREAKPOINTS
+ */
+$gridTiny: 480px;
+$gridSmall: 768px;
+$gridMedium: 992px;
+$gridLarge: 1200px;
+$gridExtraLarge: 1400px;
+
+$gridOuterContainerPadding: 0 15px;
+
+
+
+
+
+/**
+ * GRID BREAKPOINT CONTROLLER MIXIN
+ * Mobile First.
+ */
+@mixin breakpoint($class) {
+  
+  // Tiny: tn
+  @if $class == tn {
+    @media (max-width: $gridTiny) { @content; }
+  }
+  
+  // Extra Small: xs
+  @else if $class == xs {
+    @media (max-width: $gridSmall - 1px) { @content; }
+  }
+  
+  // Small: sm
+  @else if $class == sm {
+    @media (min-width: $gridSmall) { @content; }
+  }
+  
+  // Medium: md
+  @else if $class == md {
+    @media (min-width: $gridMedium) { @content; }
+  }
+  
+  // Large: lg
+  @else if $class == lg {
+    @media (min-width: $gridLarge) { @content; }
+  }
+  
+  // Extra Large: xl
+  @else if $class == xl {
+    @media (min-width: $gridExtraLarge) { @content; }
+  }
+  
+  @else {
+    @warn "Breakpoint mixin supports: tn, xs, sm, md, lg, xl";
+  }
+}
+
+
+/**
+ * MOBILE LAST DESKTOP OUT BREAKPOINTS
+ * For use in unique circumstances requiring degraded
+ * styles in a 'desktop' first style.
+ */
+@mixin breakpoint_out($class) {
+  
+  // Tiny: tn
+  @if $class == tn {
+    @media (max-width: $gridTiny) { @content; }
+  }
+  
+  // Extra Small: xs
+  @else if $class == xs {
+    @media (max-width: $gridSmall - 1px) { @content; }
+  }
+  
+  // Small: sm
+  @else if $class == sm {
+    @media (max-width: $gridMedium) { @content; }
+  }
+  
+  // Medium: md
+  @else if $class == md {
+    @media (max-width: $gridLarge) { @content; }
+  }
+  
+  // Large: lg
+  @else if $class == lg {
+    @media (max-width: $gridExtraLarge) { @content; }
+  }
+  
+  // Extra Large: xl
+  @else if $class == xl {
+    @content;
+  }
+  
+  @else {
+    @warn "Breakpoint mixin supports: tn, xs, sm, md, lg, xl";
+  }
+}
+
+
+
+
+
+
+/**
+ * OUTER-CONTAINER
+ * Constrains content to breakpoints.
+ */
+.outer-container {
+  @include container;
+  @include breakpoint(sm) {max-width: $gridSmall;}
+  @include breakpoint(md) {max-width: $gridMedium;}
+  @include breakpoint(lg) {max-width: $gridLarge;}
+  @include breakpoint(xl) {max-width: $gridExtraLarge;}
+  
+  padding: $gridOuterContainerPadding;
+  
+}

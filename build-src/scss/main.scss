@@ -4,11 +4,13 @@
  */
  
 
-// SUSY
+/**
+ * SUSY GRID
+ * Setting defaults - http://susydocs.oddbird.net/en/latest/settings/
+ */
 $susy: (
   columns: 12,
-  gutter-position: split,
-  global-box-sizing: border-box;
+  global-box-sizing: border-box,
 );
 @import "vendor/susy";
 @import "vendor/normalize";
@@ -16,9 +18,10 @@ $susy: (
 // Global
 @import "partials/variables";
 @import "partials/mixins";
-@import "partials/general";
 
 // Layouts & Modules
+@import "partials/layouts/grid";
+@import "partials/general";
 @import "partials/layouts/global";
 @import "partials/layouts/master";
 @import "partials/modules";
