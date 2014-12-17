@@ -6,7 +6,6 @@ BuildersStarterKit
 Ruby - https://www.ruby-lang.org/en/downloads/
 NPM - https://www.npmjs.com/
 Gulp - https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
-Susy - http://susydocs.oddbird.net/en/latest/install/
 
 ## To set up:
 Run `npm install` (or `sudo npm install`) from project root
@@ -20,12 +19,16 @@ the required packages into the `node_modules` folder (not version controlled)
 and concatenating commands
 
 
-### CSS
+## CSS
 Style guidelines of [cssguidelin.es](http://cssguidelin.es/)
-BEM-style naming
+Comment more to give context and understanding for those who may inherit this project at a later date
+BEM-style naming for .classes and $variables
 .block-name
 .block-name__element
 .block-name__element--modifier
+$color__brand--primary
+
+Functions/Mixins: lowerCamelCase
 
 
 ### LiveReload

@@ -32,3 +32,18 @@
   margin: 0;
   padding: 0;
 }
+
+
+
+
+
+
+/**
+ * REMOVE FIRST AND LAST MARGINS
+ */
+@mixin noFirstLastMargin() {
+  // Remove top and bottom margins from first and last children
+  // direct descendants for nice alignment with wrappers and containers.
+  > :first-child {margin-top: 0;}
+  > :last-child {margin-bottom: 0;}
+}

@@ -335,6 +335,18 @@ td, th {
  * COLORS
  */
 /**
+ * FONT IMPORTS
+ */
+/**
+ * FONT VARIABLES
+ */
+/**
+ * FONT MIXINS
+ */
+/**
+ * COLORS
+ */
+/**
  * NEST
  * (like .row from TWBS)
  */
@@ -343,6 +355,9 @@ td, th {
  */
 /**
  * UNLIST
+ */
+/**
+ * REMOVE FIRST AND LAST MARGINS
  */
 /**
  * GRID BREAKPOINTS
@@ -435,41 +450,50 @@ body {
  * HEADER
  */
 .header {
-  background: tomato; }
+  background: #1bafa9;
+  padding: 15px 0; }
 
 /**
- * MENU NAV
+ * NAV
+ * Initially controls mobile nav slider, then desktop nav
  */
-.header-nav:after {
-  content: " ";
-  display: block;
-  clear: both; }
+.nav {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #1bafa9;
+  color: #fff;
+  -webkit-transform: translate(-250px, 0);
+  transform: translate(-250px, 0);
+  overflow-y: auto; }
 
-.header-nav__item {
-  
-  
-  
-  width: 32.20339%;
-  float: left;
-  
-  margin-right: 1.69492%;
-  
-  
+.nav-is-open .nav {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0); }
+.nav-is-open .header, .nav-is-open .main, .nav-is-open .footer {
+  -webkit-transform: translate(250px, 0);
+  transform: translate(250px, 0); }
+
+.nav, .header, .main, .footer {
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out; }
+
+.nav__item {
   padding: 15px; }
-  .header-nav__item:last-child {
-    
-    
-    
-    width: 32.20339%;
-    float: right;
-    
-    margin-right: 0;
-    
-     }
 
 /**
  * MAIN
  */
+.main {
+  padding: 0 30px; }
+  .main > :first-child {
+    margin-top: 0; }
+  .main > :last-child {
+    margin-bottom: 0; }
+
 /**
  * FOOTER
  */
@@ -498,14 +522,12 @@ body {
   padding: 5px 8px; }
 
 /**
- * FONT IMPORTS
- */
-/**
- * FONT VARIABLES
- */
-/**
- * FONT MIXINS
- */
-/**
  * HELPERS
  */
+/**
+ * LIVERELOAD
+ * Class applied momentarily when livereload
+ * reloads the browser
+ */
+.livereload-reloaded {
+  background: #eee !important; }

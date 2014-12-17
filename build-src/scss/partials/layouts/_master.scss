@@ -13,24 +13,58 @@ body {
  * HEADER
  */
 .header {
-  background: tomato;
+  background: $color__brand--primary;
+  padding: 15px 0;
 }
 
+.header__logo {}
 
 
 
 
 
 /**
- * MENU NAV
+ * NAV
+ * Initially controls mobile nav slider, then desktop nav
  */
-.header-nav {
-  @include nest();
+.nav {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  height: 100%;
+  background-color: $color__brand--primary;
+  color: $color__white;
+  -webkit-transform: translate(-250px, 0);
+  transform: translate(-250px, 0);
+  overflow-y: auto;
 }
 
-.header-nav__item {
-  @include span(4);
-  &:last-child{@include span(4 last);}
+// On nav open
+.nav-is-open {
+  
+  .nav {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  
+  .header, .main, .footer {
+    -webkit-transform: translate(250px, 0);
+    transform: translate(250px, 0);
+  }
+  
+}
+
+.nav, .header, .main, .footer {
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out
+}
+
+
+.nav__item {
+  // @include span(4);
+  // &:last-child{@include span(4 last);}
   padding: 15px;
 }
 
@@ -40,7 +74,10 @@ body {
 /**
  * MAIN
  */
-.main {}
+.main {
+  padding: $mainContentPadding;
+  @include noFirstLastMargin();
+}
 
 
 

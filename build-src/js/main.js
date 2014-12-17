@@ -3,30 +3,37 @@
  */
 $(function() {
   
-  // Toggle mobile menu
-  $('#js-toggle-main-nav').click(function(event) {
-    event.preventDefault();
-    $('#js-main-nav').toggleClass('js-show-nav');
-    $(this).toggleClass('js-nav-is-open');
-  });  
+  /**
+   * Initiate Functions
+   */
   
-  // SLIDERS
-  // Home slider
-  var homeSlider = $('#large-slider--home');
-  if( homeSlider.length ) {
-    homeSlider.bxSlider({
-      controls: false,
-      auto: true,
-      pager: true, // temp
-    });
-  }
+  // Nav toggle
+  bindNavClick();
+   
+  
+
 
 });
 /**
  * END JQUERY ON READY
  */
 
+
 /**
  * FUNCTIONS
  */
 
+
+/**
+ * BIND NAV MENU
+ */
+function bindNavClick() {
+  
+  $('#js__nav-controller').click(function(event) {
+    event.preventDefault();
+    
+    $('body').toggleClass('nav-is-open');
+    
+  });
+  
+}

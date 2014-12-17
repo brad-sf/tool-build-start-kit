@@ -10,26 +10,36 @@
         <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
 
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        
+        <!-- Modernizr disabled until needed: -->
+        <!-- <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
+        
     </head>
     <body>
     
-    <header class="header">
+    <header class="header" id="js__header">
         <div class="outer-container">
-            <nav class="header-nav">
-                <ul>
-                    <li class="header-nav__item">
-                        <a href="#">Link a</a>
-                    </li>
-                    <li class="header-nav__item">
-                        <a href="#">Link b</a>
-                    </li>
-                    <li class="header-nav__item">
-                        <a href="#">Link</a>
-                    </li>
-                </ul>
-            </nav>
+            <div class="header__nav-link" id="js__nav-controller">
+                <a href="#">(nav)</a>
+            </div>
+            <div class="header__logo">
+                <a href="/">Logo</a>
+            </div>
         </div>
     </header>
+    
+    <nav class="nav">
+        <ul>
+            <li class="nav__item">
+                <a href="#">Link a</a>
+            </li>
+            <li class="nav__item">
+                <a href="#">Link b</a>
+            </li>
+            <li class="nav__item">
+                <a href="#">Link</a>
+            </li>
+        </ul>
+    </nav>
     
     <div class="main outer-container"> <!-- MAIN -->

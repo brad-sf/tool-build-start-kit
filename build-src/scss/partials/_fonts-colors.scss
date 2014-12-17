@@ -7,10 +7,10 @@
 /**
  * FONT VARIABLES
  */
-$headingFont: sans-serif;
-$subheadingFont: sans-serif;
-$bodyFont: Helvetica, sans-serif;
-$scriptFont: sans-serif;
+$font__heading: sans-serif;
+$font__subheading: sans-serif;
+$font__body: Helvetica, sans-serif;
+$font__script: sans-serif;
 
 
 
@@ -20,6 +20,24 @@ $scriptFont: sans-serif;
 
 // HEADING FONT
 @mixin headingFont {
-  font-family: $headingFont;
+  font-family: $font__heading;
   letter-spacing: 1px;
 }
+
+
+
+
+
+/**
+ * COLORS
+ */
+
+// Basics
+$color__white: #fff;
+
+// Brand
+$color__brand--primary: #1bafa9;
+$color__brand--alt: #fc903c;
+
+
+

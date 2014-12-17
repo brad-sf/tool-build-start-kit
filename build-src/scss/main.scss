@@ -17,6 +17,7 @@ $susy: (
 
 // Global
 @import "partials/variables";
+@import "partials/fonts-colors";
 @import "partials/mixins";
 
 // Layouts & Modules
@@ -25,9 +26,6 @@ $susy: (
 @import "partials/layouts/global";
 @import "partials/layouts/master";
 @import "partials/modules";
-
-// Global styles
-@import "partials/fonts-colors";
 
 // Templates
 @import "partials/templates/home";
