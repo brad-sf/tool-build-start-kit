@@ -21,6 +21,10 @@ the required packages into the `node_modules` folder (not tracked).
 and concatenating commands.
 
 
+## Code
+Preferrably use tabs for indentation (for best compatability with devs using Visual Studio).
+
+
 ## CSS
 Style guidelines of [cssguidelin.es](http://cssguidelin.es/)
 Comment more to give context and understanding for those who may inherit this project at a later date
@@ -39,7 +43,7 @@ Gulp will LiveReload on compile. Install the [Chrome LiveReload extension](https
 
 ### Robots.txt
 Currently set to disable all robots for development.
-Enable for on production or launch.
+Enable for on production and launch.
 
 
 ### Image names
@@ -54,4 +58,6 @@ Autoprefixer is disabled during dev to support sourcemaps. Renable and compile f
 
 
 ### Vagrant
-`vagrant up` can be used for quick development.
+`vagrant up` can be used for quick development pre-dev phase.
+Vagrant will serve .html file from the Project.Web folder at http://localhost:8080
+The Apache in Vagrant is configured to parse .html files with PHP so we can use include script such as `<?php include '_includes/head.html'; ?>`

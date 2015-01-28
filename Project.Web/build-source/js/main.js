@@ -4,14 +4,11 @@
 $(function() {
   
   /**
-   * Initiate Functions
+   * Initiate Functions -----------
    */
   
-  // Nav toggle
-  bindNavClick();
-   
-  
-
+  // Kick off with the example
+  exampleFunction();
 
 });
 /**
@@ -19,21 +16,16 @@ $(function() {
  */
 
 
-/**
- * FUNCTIONS
- */
+
+
 
 
 /**
- * BIND NAV MENU
+ * Example Function
+ * This function doesn't do much...
  */
-function bindNavClick() {
+function exampleFunction() {
   
-  $('#js__nav-controller').click(function(event) {
-    event.preventDefault();
-    
-    $('body').toggleClass('nav-is-open');
-    
-  });
+  console.log('Ready to roll!');
   
 }

@@ -1,5 +1,9 @@
 /**
  * MASTER LAYOUT
+ * Layouts style the over-all theme of the site and
+ * the header and footer. Template specific layouts such
+ * as home page or content page are styled as individual
+ * templates in the templates folder.
  */
 body {
   min-width: 320px;
@@ -12,7 +16,7 @@ body {
 
 
 /**
- * VARIABLES
+ * LAYOUT SPECIFIC VARIABLES
  */
 $header-height: 70px;
 

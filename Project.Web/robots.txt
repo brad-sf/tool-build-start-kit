@@ -1,2 +1,4 @@
+# Disallow all robots during development
+# remove on production.
 User-agent: *
 Disallow: /

@@ -1,7 +1,7 @@
 /**
  * FONT IMPORTS
  */
-
+// Go here...
 
 
 
@@ -17,6 +17,7 @@ body {
 
 
 
+
 /**
  * FONT VARIABLES
  */
@@ -24,6 +25,9 @@ $font__heading: sans-serif;
 $font__subheading: sans-serif;
 $font__body: Helvetica, sans-serif;
 $font__script: sans-serif;
+
+
+
 
 
 
@@ -41,24 +45,5 @@ $font__script: sans-serif;
   font-family: $font__heading;
   letter-spacing: 1px;
 }
-
-
-
-
-
-/**
- * COLORS
- */
-
-// Global
-$color__core-background: white;
-
-// Basics
-$color__white: #fff;
-
-// Brand
-$color__brand--primary: #1bafa9;
-$color__brand--alt: #fc903c;
-
 
 

@@ -1,6 +1,6 @@
 /**
  * MAIN.SCSS
- * Import
+ * Import.
  */
  
 
@@ -13,24 +13,36 @@ $susy: (
   global-box-sizing: border-box,
 );
 @import "vendor/susy";
+
+
+/**
+ * NORMALIZE
+ */
 @import "vendor/normalize";
 
-// Global
+
+/**
+ * FUNCTION AND SETTINGS
+ */
+@import "partials/fonts";
 @import "partials/variables";
-@import "partials/fonts-colors";
 @import "partials/mixins";
 
-// Layouts & Modules
+
+/**
+ * LAYOUTS AND COMPONENTS
+ */
 @import "partials/layouts/grid";
 @import "partials/general";
 @import "partials/layouts/global";
 @import "partials/layouts/master";
-@import "partials/modules";
+@import "partials/components";
 
-// Templates
+
+/**
+ * TEMPLATES
+ */
 @import "partials/templates/home";
 
-// Components
-@import "partials/components/sliders";
-@import "partials/helpers";
 
+// Other

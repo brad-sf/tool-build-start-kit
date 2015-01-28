@@ -16,8 +16,8 @@ var gulp = require('gulp'),
 
 // Dirs
 var htmlDir = '../',
-    sassDir = 'BuildSource/scss',
-    jsDir = 'BuildSource/js',
+    sassDir = 'scss',
+    jsDir = 'js',
     compiledCSSDir = htmlDir + 'css',
     compiledJSDir = htmlDir + 'js';
 
@@ -93,6 +93,7 @@ gulp.task('html', function() {
     .pipe(livereload())
     .pipe(notify('HTML changed, reloaded'));
 });
+
 
 
 
