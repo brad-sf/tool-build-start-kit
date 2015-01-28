@@ -24,25 +24,18 @@ $susy: (
 /**
  * FUNCTION AND SETTINGS
  */
-@import "partials/fonts";
-@import "partials/variables";
-@import "partials/mixins";
+@import "partials/config/fonts";
+@import "partials/config/variables";
+@import "partials/config/mixins";
 
 
 /**
  * LAYOUTS AND COMPONENTS
  */
-@import "partials/layouts/grid";
+@import "partials/config/grid";
 @import "partials/general";
 @import "partials/layouts/global";
 @import "partials/layouts/master";
 @import "partials/components";
 
 
-/**
- * TEMPLATES
- */
-@import "partials/templates/home";
-
-
-// Other

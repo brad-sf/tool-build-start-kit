@@ -453,6 +453,13 @@ ul {
   padding: 0; }
 
 /**
+ * BROWSERUPGRADE
+ */
+.browserupgrade {
+  text-align: center;
+  padding: 50px; }
+
+/**
  * MASTER LAYOUT
  * Layouts style the over-all theme of the site and
  * the header and footer. Template specific layouts such
@@ -476,22 +483,16 @@ body {
 
 .header__logo {
   float: left;
-  color: #fff;
-  margin: 0 15px;
+  margin: 0;
   line-height: 70px;
   font-weight: normal;
   font-size: 2em; }
+  .header__logo a {
+    color: #fff; }
 
 /**
- * MAIN
+ * CONTENT-MAIN
  */
-.main {
-  padding: 0 23px; }
-  .main > :first-child {
-    margin-top: 0; }
-  .main > :last-child {
-    margin-bottom: 0; }
-
 /**
  * FOOTER
  */
@@ -501,16 +502,36 @@ body {
   padding: 20px 0; }
 
 /**
- * BROWSERUPGRADE
+ * SECTIONS AND ASIDE
  */
-.browserupgrade {
-  text-align: center;
-  padding: 50px; }
+@media (min-width: 768px) {
+  .section--has-aside {
+    
+    
+    
+    width: 66.10169%;
+    float: left;
+    
+    margin-right: 1.69492%;
+    
+     } }
+
+@media (min-width: 768px) {
+  .aside {
+    
+    
+    
+    width: 32.20339%;
+    float: right;
+    
+    margin-right: 0;
+    
+    
+    border-left: 1px solid #fc903c; } }
 
 /**
  * COMPONENTS (BLOCKS)
- * All components, non master layout, should be individually 
- * classed and styled here.
+ * All components should be individually classed and styled here.
  */
 /**
  * The .table table :)
@@ -523,8 +544,5 @@ body {
   text-align: center;
   padding: 5px 8px; }
 
-/**
- * TEMPLATES
- */
 
 /*# sourceMappingURL=main.css.map */

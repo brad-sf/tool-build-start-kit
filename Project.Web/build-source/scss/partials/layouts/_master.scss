@@ -39,11 +39,14 @@ $header-height: 70px;
 
 .header__logo {
   float: left;
-  color: $color__white;
-  margin: 0 15px;
+  margin: 0;
   line-height: $header-height;
   font-weight: normal;
   font-size: em(32px);
+  
+  a {
+    color: $color__white;
+  }
 }
 
 
@@ -54,12 +57,9 @@ $header-height: 70px;
 
 
 /**
- * MAIN
+ * CONTENT-MAIN
  */
-.main {
-  padding: $mainContentPadding;
-  @include noFirstLastMargin();
-}
+.content-main {}
 
 
 
@@ -76,4 +76,28 @@ $header-height: 70px;
   background: $color__brand--primary;
   margin-top: 30px;
   padding: 20px 0;
+}
+
+
+
+
+
+/**
+ * SECTIONS AND ASIDE
+ */
+.section {}
+
+.section--has-aside {
+  
+  @include breakpoint(sm) {
+    @include span(8);
+  }
+}
+
+.aside {
+  
+  @include breakpoint(sm) {
+    @include span(4 last);
+    border-left: 1px solid $color__brand--alt;
+  }
 }

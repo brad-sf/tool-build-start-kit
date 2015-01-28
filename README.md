@@ -8,6 +8,8 @@ NPM - https://www.npmjs.com/
 Gulp - https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
 
 ## To set up:
+Clone this repo and delete the `.git` folder. Create a new stash repo and upload.
+
 During build only phase we can run `vagrant up` from root directory to boot up a vagrant dev box for building, `http://localhost:8080`.
 
 Run `npm install` (or `sudo npm install`) from `Project.Web/build-source` to install locally the required packages. Note these are not to be tracked in SCM.
@@ -61,3 +63,7 @@ Autoprefixer is disabled during dev to support sourcemaps. Renable and compile f
 `vagrant up` can be used for quick development pre-dev phase.
 Vagrant will serve .html file from the Project.Web folder at http://localhost:8080
 The Apache in Vagrant is configured to parse .html files with PHP so we can use include script such as `<?php include '_includes/head.html'; ?>`
+
+
+### Grid
+15px left and right padding. `.nest` to `margin-left: -15px` and right.
