@@ -41,3 +41,17 @@ h1, h2, h3, h4 {
  ul {
   @include unlist();
  }
+
+
+
+
+
+
+
+/**
+ * BROWSERUPGRADE
+ */
+.browserupgrade {
+  text-align: center;
+  padding: 50px;
+}

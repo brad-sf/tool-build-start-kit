@@ -474,31 +474,6 @@ body {
   background: #1bafa9;
   height: 70px; }
 
-.header__nav-link {
-  float: left;
-  margin-left: -15px; }
-  @media (min-width: 992px) {
-    .header__nav-link {
-      display: none; } }
-  .header__nav-link button {
-    display: inline-block;
-    padding: 0;
-    height: 70px;
-    width: 70px;
-    background-image: none;
-    background-color: transparent;
-    border: none;
-    transition: background-color .2s ease-out; }
-    .header__nav-link button:hover, .nav-is-open .header__nav-link button {
-      background-color: #1dbcb6; }
-    .header__nav-link button:active {
-      background-color: #1fcac3; }
-    .header__nav-link button:focus {
-      outline: none; }
-  .header__nav-link img {
-    width: 24px;
-    height: 24px; }
-
 .header__logo {
   float: left;
   color: #fff;
@@ -506,58 +481,6 @@ body {
   line-height: 70px;
   font-weight: normal;
   font-size: 2em; }
-
-/**
- * NAV
- */
-.nav {
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 250px;
-  height: 100%;
-  margin-top: 70px;
-  background-color: #fc903c;
-  color: #fff;
-  -webkit-transform: translate(-250px, 0);
-  transform: translate(-250px, 0);
-  overflow-y: auto; }
-  @media (min-width: 992px) {
-    .nav {
-      position: static;
-      width: auto;
-      padding: 0 23px;
-      -webkit-transform: translate(0, 0);
-      transform: translate(0, 0);
-      margin-top: 0; } }
-
-.nav-is-open .nav {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0); }
-.nav-is-open .header, .nav-is-open .main, .nav-is-open .footer {
-  -webkit-transform: translate(250px, 0);
-  transform: translate(250px, 0); }
-
-.nav, .header, .main, .footer {
-  -webkit-transition: -webkit-transform .3s ease-out;
-  transition: transform .3s ease-out; }
-
-.nav__item {
-  border-bottom: 1px solid white; }
-  .nav__item a {
-    display: block;
-    padding: 15px;
-    width: 100%; }
-    .nav__item a:hover, .nav__item a:active {
-      background: #1bafa9; }
-  @media (min-width: 992px) {
-    .nav__item {
-      display: inline-block;
-      border-bottom: none; }
-      .nav__item a {
-        display: inline-block;
-        width: auto; } }
 
 /**
  * MAIN
@@ -573,7 +496,9 @@ body {
  * FOOTER
  */
 .footer {
-  padding: 0 23px; }
+  background: #1bafa9;
+  margin-top: 30px;
+  padding: 20px 0; }
 
 /**
  * BROWSERUPGRADE
