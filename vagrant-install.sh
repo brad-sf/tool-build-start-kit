@@ -17,7 +17,7 @@ sudo a2enmod rewrite
 
 # link www folder to vagrant (Latest apache uses /var/www/html)
 sudo rm -rf /var/www/html
-sudo ln -fs /vagrant/public /var/www/html
+sudo ln -fs /vagrant/Project.Web /var/www/html
 
 # php ini fixes
 sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/apache2/php.ini
@@ -26,6 +26,7 @@ sed -i "s/short_open_tags = .*/short_open_tags = On/" /etc/php5/apache2/php.ini
 
 #apache conf fixes
 sed -i 's/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
+
 # php to parse .html files for simple build includes
 echo 'AddType application/x-httpd-php .html' | sudo tee --append /etc/apache2/apache2.conf
 

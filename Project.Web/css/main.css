@@ -332,11 +332,14 @@ td, th {
  * VARIABLES
  */
 /**
- * COLORS
- */
-/**
  * FONT IMPORTS
  */
+/**
+ * FONT SETTINGS
+ */
+body {
+  font-size: 16px; }
+
 /**
  * FONT VARIABLES
  */
@@ -384,9 +387,6 @@ td, th {
     content: " ";
     display: block;
     clear: both; }
-  @media (min-width: 768px) {
-    .outer-container {
-      max-width: 768px; } }
   @media (min-width: 992px) {
     .outer-container {
       max-width: 992px; } }
@@ -396,6 +396,10 @@ td, th {
   @media (min-width: 1400px) {
     .outer-container {
       max-width: 1400px; } }
+  .outer-container:after {
+    content: " ";
+    display: block;
+    clear: both; }
 
 /**
  * GENERAL
@@ -424,14 +428,12 @@ fieldset {
  */
 img {
   max-width: 100%;
-  height: auto; }
+  height: auto;
+  vertical-align: middle; }
 
 /**
  * HEADINGS
  */
-h1, h2, h3, h4 {
-  text-transform: uppercase; }
-
 /**
  * LISTS ul/li
  */
@@ -444,18 +446,55 @@ ul {
  * MASTER LAYOUT
  */
 body {
-  min-width: 320px; }
+  min-width: 320px;
+  min-height: 100%;
+  background: white; }
 
+/**
+ * VARIABLES
+ */
 /**
  * HEADER
  */
 .header {
   background: #1bafa9;
-  padding: 15px 0; }
+  height: 70px; }
+
+.header__nav-link {
+  float: left;
+  margin-left: -15px; }
+  @media (min-width: 992px) {
+    .header__nav-link {
+      display: none; } }
+  .header__nav-link button {
+    display: inline-block;
+    padding: 0;
+    height: 70px;
+    width: 70px;
+    background-image: none;
+    background-color: transparent;
+    border: none;
+    transition: background-color 0.2s ease-out; }
+    .header__nav-link button:hover, .nav-is-open .header__nav-link button {
+      background-color: #1dbcb6; }
+    .header__nav-link button:active {
+      background-color: #1fcac3; }
+    .header__nav-link button:focus {
+      outline: none; }
+  .header__nav-link img {
+    width: 24px;
+    height: 24px; }
+
+.header__logo {
+  float: left;
+  color: #fff;
+  margin: 0 15px;
+  line-height: 70px;
+  font-weight: normal;
+  font-size: 2em; }
 
 /**
  * NAV
- * Initially controls mobile nav slider, then desktop nav
  */
 .nav {
   z-index: 1;
@@ -464,11 +503,20 @@ body {
   bottom: 0;
   width: 250px;
   height: 100%;
-  background-color: #1bafa9;
+  margin-top: 70px;
+  background-color: #fc903c;
   color: #fff;
   -webkit-transform: translate(-250px, 0);
   transform: translate(-250px, 0);
   overflow-y: auto; }
+  @media (min-width: 992px) {
+    .nav {
+      position: static;
+      width: auto;
+      padding: 0 23px;
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+      margin-top: 0; } }
 
 .nav-is-open .nav {
   -webkit-transform: translate(0, 0);
@@ -482,13 +530,26 @@ body {
   transition: transform 0.3s ease-out; }
 
 .nav__item {
-  padding: 15px; }
+  border-bottom: 1px solid white; }
+  .nav__item a {
+    display: block;
+    padding: 15px;
+    width: 100%; }
+    .nav__item a:hover, .nav__item a:active {
+      background: #1bafa9; }
+  @media (min-width: 992px) {
+    .nav__item {
+      display: inline-block;
+      border-bottom: none; }
+      .nav__item a {
+        display: inline-block;
+        width: auto; } }
 
 /**
  * MAIN
  */
 .main {
-  padding: 0 30px; }
+  padding: 0 23px; }
   .main > :first-child {
     margin-top: 0; }
   .main > :last-child {
@@ -498,7 +559,7 @@ body {
  * FOOTER
  */
 .footer {
-  padding: 15px 0; }
+  padding: 0 23px; }
 
 /**
  * BROWSERUPGRADE

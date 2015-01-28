@@ -4,6 +4,19 @@
 
 
 
+
+
+/**
+ * FONT SETTINGS
+ */
+$base-font-size: 16px;
+body {
+  font-size: $base-font-size;
+}
+
+
+
+
 /**
  * FONT VARIABLES
  */
@@ -17,6 +30,11 @@ $font__script: sans-serif;
 /**
  * FONT MIXINS
  */
+ 
+// EM CONVERTOR
+@function em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
 
 // HEADING FONT
 @mixin headingFont {
@@ -31,6 +49,9 @@ $font__script: sans-serif;
 /**
  * COLORS
  */
+
+// Global
+$color__core-background: white;
 
 // Basics
 $color__white: #fff;

@@ -11,14 +11,15 @@ var gulp = require('gulp'),
     autoprefix = require('gulp-autoprefixer'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
+    sourcemaps = require('gulp-sourcemaps'),
     livereload = require('gulp-livereload');
 
 // Dirs
-var htmlDir = 'public',
-    sassDir = 'build-src/scss',
-    jsDir = 'build-src/js',
-    compiledCSSDir = 'public/css',
-    compiledJSDir = 'public/js';
+var htmlDir = '../',
+    sassDir = 'BuildSource/scss',
+    jsDir = 'BuildSource/js',
+    compiledCSSDir = htmlDir + 'css',
+    compiledJSDir = htmlDir + 'js';
 
 
 
@@ -44,14 +45,19 @@ gulp.task('default', ['css', 'js', 'watch']);
 gulp.task('css', function() {
 
   return gulp.src(sassDir + '/main.scss')
+    .pipe(sourcemaps.init())
     .pipe(
-          sass(
-               {
-                loadPath: __dirname + '/' + sassDir,
-                style: 'compressed'
-                }
-               ).on('error', gutil.log))
+          sass({
+                  loadPath: __dirname + '/' + sassDir,
+                  style: 'compressed',
+                  errLogToConsole: false,
+                  onError: function(err) {
+                      return notify().write(err);
+                  }
+                })
+          )
     // .pipe(autoprefix('last 4 versions'))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(compiledCSSDir))
     .pipe(livereload())
     .pipe(notify('SCSS compiled'));
@@ -63,8 +69,11 @@ gulp.task('css', function() {
 
 /**
  * WATCH
+ * This task will initiate the LiveReload server and
+ * watch the .html .scss and .js files to run their tasks.
  */
 gulp.task('watch', function() {
+  
   livereload.listen();
   gulp.watch(htmlDir + '/**/*.html', ['html']);
   gulp.watch(sassDir + '/**/*.scss', ['css']);
@@ -77,6 +86,7 @@ gulp.task('watch', function() {
 
 /**
  * HTML
+ * This task simply send the livereload command
  */
 gulp.task('html', function() {
   return gulp.src('')
@@ -94,7 +104,8 @@ gulp.task('html', function() {
 gulp.task('js', function() {
   
   var concatJsFiles = [
-        // jsDir + '/vendor/plugins.js',
+        // Add your plugins etc. here to be concat. Eg:
+        // jsDir + '/plugins/bxslider.js',
         jsDir + '/main.js',
   ];
   

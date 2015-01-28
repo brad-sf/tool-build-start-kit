@@ -7,9 +7,9 @@ $gridMedium: 992px;
 $gridLarge: 1200px;
 $gridExtraLarge: 1400px;
 
-$gridOuterContainerPadding: 0 15px;
+$gridOuterContainerPadding: 15px;
 
-$mainContentPadding: 0 30px;
+$mainContentPadding: 0 23px;
 
 
 
@@ -108,11 +108,12 @@ $mainContentPadding: 0 30px;
  */
 .outer-container {
   @include container;
-  @include breakpoint(sm) {max-width: $gridSmall;}
+  // @include breakpoint(sm) {max-width: $gridSmall;}
   @include breakpoint(md) {max-width: $gridMedium;}
   @include breakpoint(lg) {max-width: $gridLarge;}
   @include breakpoint(xl) {max-width: $gridExtraLarge;}
   
-  padding: $gridOuterContainerPadding;
+  padding: 0 $gridOuterContainerPadding;
   
+  @include susy-clearfix();
 }
