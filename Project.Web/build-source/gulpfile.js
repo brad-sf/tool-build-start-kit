@@ -60,7 +60,7 @@ gulp.task('css', function() {
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(compiledCSSDir))
     .pipe(livereload())
-    .pipe(notify('SCSS compiled'));
+    .pipe(notify({message: 'SCSS compiled, reloaded', onLast: true}));
 });
 
 
@@ -91,7 +91,7 @@ gulp.task('watch', function() {
 gulp.task('html', function() {
   return gulp.src('')
     .pipe(livereload())
-    .pipe(notify('HTML changed, reloaded'));
+    .pipe(notify({message: 'HTML changed, reloaded', onLast: true}));
 });
 
 
@@ -115,6 +115,6 @@ gulp.task('js', function() {
     .pipe(uglify())
     .pipe(gulp.dest(compiledJSDir))
     .pipe(livereload())
-    .pipe(notify('JS minified'));
+    .pipe(notify({message: 'JS minified, reloaded', onLast: true}));
     
 });
