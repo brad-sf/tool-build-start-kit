@@ -58,7 +58,8 @@ gulp.task('css', function() {
           )
     // .pipe(autoprefix('last 4 versions'))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(compiledCSSDir))
+    // Disabling source maps allows LiveReload to refresh the CSS only without refreshing the entire page
+    //.pipe(gulp.dest(compiledCSSDir))
     .pipe(livereload())
     .pipe(notify({message: 'SCSS compiled, reloaded', onLast: true}));
 });
