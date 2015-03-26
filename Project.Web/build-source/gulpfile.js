@@ -11,13 +11,14 @@ var gulp = require('gulp'),
     autoprefix = require('gulp-autoprefixer'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
     sourcemaps = require('gulp-sourcemaps'),
     livereload = require('gulp-livereload');
 
 // Dirs
-var htmlDir = '../',
-    sassDir = 'scss',
-    jsDir = 'js',
+var htmlDir = './',
+    sassDir = 'build-source/scss',
+    jsDir = 'build-source/js',
     compiledCSSDir = htmlDir + 'css',
     compiledJSDir = htmlDir + 'js';
 
@@ -45,23 +46,31 @@ gulp.task('default', ['css', 'js', 'watch']);
 gulp.task('css', function() {
 
   return gulp.src(sassDir + '/main.scss')
-    .pipe(sourcemaps.init())
+    
+    // Disabling source maps allows LiveReload to refresh the CSS
+    // only without refreshing the entire page. Init and Write pipes.
+    // .pipe(sourcemaps.init()) 
+    
     .pipe(
           sass({
                   loadPath: __dirname + '/' + sassDir,
-                  style: 'compressed',
+                  outputStyle: 'compressed',
                   errLogToConsole: false,
                   onError: function(err) {
                       return notify().write(err);
                   }
                 })
           )
-    // .pipe(autoprefix('last 4 versions'))
-    .pipe(sourcemaps.write('./'))
-    // Disabling source maps allows LiveReload to refresh the CSS only without refreshing the entire page
-    //.pipe(gulp.dest(compiledCSSDir))
+
+    .pipe(autoprefix('last 4 versions')) // Autoprefixer kills source maps
+    
+    // .pipe(sourcemaps.write('./'))
+    
+    .pipe(rename('main.min.css')) // Output name
+    .pipe(gulp.dest(compiledCSSDir))
     .pipe(livereload())
     .pipe(notify({message: 'SCSS compiled, reloaded', onLast: true}));
+    
 });
 
 
@@ -112,7 +121,7 @@ gulp.task('js', function() {
   ];
   
   return gulp.src(concatJsFiles)
-    .pipe(concat('main.min.js'))
+    .pipe(concat('main.min.js')) // Output name
     .pipe(uglify())
     .pipe(gulp.dest(compiledJSDir))
     .pipe(livereload())
