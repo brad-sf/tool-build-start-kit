@@ -2,10 +2,5 @@
 
 .vagrant
 .sass-cache
-.codekit-cache
-codekit-config
-config.codekit
 
-node_modules/
-
-.idea
+build-source/node_modules
